@@ -3,7 +3,7 @@ title: "从零开始学习Go语言 | 第一篇：为什么要学习Go语言？"
 description: "Go的特点、应用场景（云原生、微服务、CLI工具等）"
 date: 2026-05-21
 slug: "why-learn-go"
-image: cover.png
+image: cover.webp
 categories:
     - Go
 series:
@@ -31,7 +31,7 @@ Go 语言诞生于 2007 年 Google 内部，由 Robert Griesemer、Rob Pike、Ke
 
 于是 2009 年 Go 正式开源，2012 年推出 1.0 版本。到现在，Docker、Kubernetes、etcd、Prometheus 这些云原生基石都是用 Go 写的。
 
-![](cover.png)
+![](cover.webp)
 
 ## Go 的核心特点
 
