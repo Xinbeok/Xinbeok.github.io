@@ -1,0 +1,13 @@
+// body 透明，让 canvas 粒子背景透出来
+body {
+    background-color: transparent !important;
+}
+
+// 卡片保持不透明，确保内容可读
+:root {
+    --card-background: #ffffff;
+}
+
+[data-scheme="dark"] {
+    --card-background: #20202a;
+}

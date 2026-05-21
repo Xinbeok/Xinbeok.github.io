@@ -10,7 +10,12 @@
       "WebFetch(domain:cdn.jsdelivr.net)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(gh api *)",
+      "Bash(curl -s \"https://api.github.com/repos/Shiliumi/Shiliumi.github.io/contents\")",
+      "WebFetch(domain:github.com)",
+      "Bash(curl *)",
+      "Bash(taskkill //F //IM hugo.exe)"
     ]
   }
 }
