@@ -8,7 +8,7 @@
 
 [zh]
     label  = "简体中文"
-    title  = "Xinbeok的小屋"
+    title  = "Xinbeok"
     weight = 2
 
     [zh.params.sidebar]
