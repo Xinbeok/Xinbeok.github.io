@@ -15,7 +15,9 @@
       "Bash(curl -s \"https://api.github.com/repos/Shiliumi/Shiliumi.github.io/contents\")",
       "WebFetch(domain:github.com)",
       "Bash(curl *)",
-      "Bash(taskkill //F //IM hugo.exe)"
+      "Bash(taskkill //F //IM hugo.exe)",
+      "Bash(convert *)",
+      "Bash(magick --version)"
     ]
   }
 }
