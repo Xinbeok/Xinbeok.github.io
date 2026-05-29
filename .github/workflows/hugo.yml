@@ -12,17 +12,19 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -30,24 +32,27 @@ jobs:
           hugo-version: '0.161.1'
           extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: Cache Hugo resources
+        uses: actions/cache@v4
+        with:
+          path: |
+            resources/
+            ~/.cache/hugo_cache/
+          key: hugo-${{ runner.os }}-${{ hashFiles('config/**', 'content/**', 'assets/**') }}
+          restore-keys: |
+            hugo-${{ runner.os }}-
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Build
+        run: hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './public'
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
